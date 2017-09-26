@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+web/routers/conf/
+data/
+dns
+ips
+main
+app.ini_bak
