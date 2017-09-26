@@ -1,7 +1,7 @@
 
 # xsec ip database
 
-xsec为一个恶意IP和域名库(Malicious ip database)，它获取恶意IP和域名的方式有以下几种：
+xsec ip database为一个恶意IP和域名库(Malicious ip database)，它获取恶意IP和域名的方式有以下几种：
 
 1. 通过爬虫定期拉取网络中公开的恶意ip库（可能过增加新爬虫的方式订阅新的IP库）
 1. 支持与自有的其他安全产品联动（HIDS、WAF、蜜罐、防火墙等产品），实时更新IP库
