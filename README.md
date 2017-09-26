@@ -1,6 +1,7 @@
-# xsec-ip-database
 
-xsec-ip-database为一个恶意IP和域名库，它获取恶意IP和域名的方式有以下几种：
+# xsec ip database
+
+xsec为一个恶意IP和域名库(Malicious ip database)，它获取恶意IP和域名的方式有以下几种：
 
 1. 通过爬虫定期拉取网络中公开的恶意ip库（可能过增加新爬虫的方式订阅新的IP库）
 1. 支持与自有的其他安全产品联动（HIDS、WAF、蜜罐、防火墙等产品），实时更新IP库
@@ -10,7 +11,7 @@ xsec-ip-database为一个恶意IP和域名库，它获取恶意IP和域名的方
 1. 启动后会定期更新ip库，默认为1小时更新一次
 1. 支持将恶意ip信息写入postgres, sqlite, mysql, mongodb数据库
 1. 支持恶意ip信息导出、导入
-1. 提供了ip和dns检测及与其他安全产品联动的接口
+1. 提供了恶意ip和dns检测以及与其他安全产品联动的接口
 
 ## 使用方法
 
@@ -106,3 +107,8 @@ func TestUpdateDomain(t *testing.T) {
 - secureKey
 - ip/domain，表示恶意ip或域名
 - pro，表示需要调动的安全产品名称
+
+### Demo
+
+1. 恶意IP检测，[http://xsec.io:8000/api/ip/212.129.58.111](http://xsec.io:8000/api/ip/212.129.58.111)
+1. 恶意域名检测，[http://xsec.io:8000/api/domain/www.hosting2balooonba.com](http://xsec.io:8000/api/domain/www.hosting2balooonba.com)

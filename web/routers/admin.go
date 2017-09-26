@@ -29,5 +29,5 @@ import (
 )
 
 func Index(ctx *macaron.Context) {
-	ctx.HTML(200, "index")
+	ctx.Write([]byte("test"))
 }
