@@ -127,7 +127,8 @@ func TestUpdateDomain(t *testing.T) {
 
 ```go
 url := "http://data.netlab.360.com/feeds/dga/dga.txt"
-	// url := "http://127.0.0.1:8000/dga.txt"
+// url := "http://127.0.0.1:8000/dga.txt"
 ```
+
 - 如果vps内存不足，会在将恶意IP和域名导出到文件中时报错，解决方案为增加swap分区。
 ![](https://docs.xsec.io/images/evil_ips/swap.png)
