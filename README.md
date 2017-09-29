@@ -122,6 +122,7 @@ func TestUpdateDomain(t *testing.T) {
 - 恶意域名的种子中新增了360 netlab提供的DGA，使得域名记录直接上到了百万级。
 
 ![](https://docs.xsec.io/images/evil_ips/netlab_360.png)
+![](https://docs.xsec.io/images/evil_ips/netlab_360_check.png)
 
 - 因为data.netlab.360.com在国内，而且体积在70M以上，所以从vps中的拉取速度很慢，建议下载到本地，将`feeds/netlab360.go`中的URL改为本地地址。
 
