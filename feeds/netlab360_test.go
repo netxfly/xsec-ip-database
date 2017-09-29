@@ -22,50 +22,13 @@ THE SOFTWARE.
 
 */
 
-package web
+package feeds_test
 
 import (
-	"fmt"
-	"net/http"
-
-	"github.com/go-macaron/cache"
-	"github.com/go-macaron/csrf"
-	"github.com/go-macaron/session"
-	"gopkg.in/macaron.v1"
-
-	"github.com/urfave/cli"
-
-	"xsec-evil-ips/web/routers"
-	"xsec-evil-ips/models"
-	"xsec-evil-ips/logger"
+	"testing"
+	"xsec-evil-ips/feeds"
 )
 
-func RunWeb(ctx *cli.Context) (err error) {
-	m := macaron.Classic()
-	m.Use(macaron.Renderer())
-	m.Use(session.Sessioner())
-	m.Use(csrf.Csrfer())
-	m.Use(cache.Cacher())
-
-	m.Get("/", routers.Index)
-	m.Get("/api/ip/:ip", routers.CheckIp)
-	m.Post("/api/ip/", routers.UpdateIp)
-
-	m.Get("/api/domain/:domain", routers.CheckDomain)
-	m.Post("/api/domain/", routers.UpdateDomain)
-
-	logger.Logger.Infof("run server on %v", fmt.Sprintf("%v:%v", HTTP_HOST, HTTP_PORT))
-	err = http.ListenAndServe(fmt.Sprintf("%v:%v", HTTP_HOST, HTTP_PORT), m)
-
-	return err
-}
-
-func LoadFromFile(ctx *cli.Context) (err error) {
-	models.Status()
-	models.CACHE_IPS.LoadFile("ips")
-	models.CACHE_DNS.LoadFile("dns")
-	models.Status()
-	models.SaveToDB()
-	RunWeb(ctx)
-	return err
+func TestFetchDGADataFrom360Netlab(t *testing.T) {
+	t.Log(feeds.FetchDGADataFrom360Netlab())
 }

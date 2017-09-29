@@ -106,9 +106,26 @@ func TestUpdateDomain(t *testing.T) {
 - timestamp
 - secureKey
 - ip/domain，表示恶意ip或域名
-- pro，表示需要调动的安全产品名称
+- pro，表示需要联动的安全产品名称
 
 ### Demo
 
 1. 恶意IP检测，[http://xsec.io:8000/api/ip/212.129.58.111](http://xsec.io:8000/api/ip/212.129.58.111)
 1. 恶意域名检测，[http://xsec.io:8000/api/domain/www.hosting2balooonba.com](http://xsec.io:8000/api/domain/www.hosting2balooonba.com)
+
+项目地址：https://github.com/netxfly/xsec-ip-database
+
+## 更新记录
+
+### 2017/9/28
+
+- 恶意域名的种子中新增了360 netlab提供的DGA，使得域名记录直接上到了百万级。
+！[](https://docs.xsec.io/images/evil_ips/netlab_360.png)
+- 因为data.netlab.360.com在国内，而且体积在70M以上，所以从vps中的拉取速度很慢，建议下载到本地，将`feeds/netlab360.go`中的URL改为本地地址。
+
+```go
+url := "http://data.netlab.360.com/feeds/dga/dga.txt"
+	// url := "http://127.0.0.1:8000/dga.txt"
+```
+- 如果vps内存不足，会在将恶意IP和域名导出到文件中时报错，解决方案为增加swap分区。
+![](https://docs.xsec.io/images/evil_ips/swap.png)

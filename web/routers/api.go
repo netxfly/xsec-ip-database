@@ -27,14 +27,14 @@ package routers
 import (
 	"gopkg.in/macaron.v1"
 	"github.com/patrickmn/go-cache"
-
-	"strings"
+	"github.com/toolkits/slice"
 
 	"xsec-evil-ips/models"
 	"xsec-evil-ips/logger"
 	"xsec-evil-ips/settings"
 	"xsec-evil-ips/util"
-	"github.com/toolkits/slice"
+
+	"strings"
 )
 
 type IplistApi struct {

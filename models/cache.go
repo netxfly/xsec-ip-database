@@ -27,12 +27,11 @@ package models
 import (
 	"github.com/patrickmn/go-cache"
 	"github.com/urfave/cli"
+	"github.com/toolkits/slice"
 
 	"xsec-evil-ips/logger"
-	//"xsec-evil-ips/web"
 
 	"encoding/gob"
-	"github.com/toolkits/slice"
 )
 
 func init() {

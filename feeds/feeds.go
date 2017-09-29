@@ -27,10 +27,11 @@ package feeds
 import (
 	"xsec-evil-ips/models"
 	"xsec-evil-ips/logger"
+	"xsec-evil-ips/web"
 
 	"sync"
 	"time"
-	"xsec-evil-ips/web"
+
 	"github.com/urfave/cli"
 )
 
@@ -68,6 +69,7 @@ func Init() {
 	EvilDnsFuncs = append(EvilDnsFuncs, FetchDnsFromBambenekconsulting)
 	EvilDnsFuncs = append(EvilDnsFuncs, FetchFromCybercrime)
 	EvilDnsFuncs = append(EvilDnsFuncs, FetchDomainsFromdShield)
+	EvilDnsFuncs = append(EvilDnsFuncs, FetchDGADataFrom360Netlab)
 
 }
 

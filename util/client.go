@@ -37,7 +37,7 @@ import (
 
 func GetPage(url string) (io.Reader, error) {
 	if settings.DEBUG {
-		logger.Logger.Infof("get info from %v", url)
+		logger.Logger.Infof("Get data from %v", url)
 	}
 
 	req, err := http.NewRequest("GET", url, nil)
